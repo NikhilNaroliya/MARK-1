@@ -1,6 +1,7 @@
+const chalk = require('chalk');
 var readlineSync = require("readline-sync");
 var score = 0;
-console.log(" -------your welcome Iam Nikhil how well do you know me------- \n\n    ----plat hard----\n\n ----------rules----------\n\n --for each correct ans you will get 1 point and for wrong ans you will loose 1 point -- \n\n")
+console.log(chalk.bgCyan(" -------your welcome Iam Nikhil how well do you know me------- \n\n    ----plat hard----\n\n ----------rules----------\n\n --for each correct ans you will get 1 point and for wrong ans you will loose 1 point -- \n\n"))
 do {
   var score1 = [], k;
   k = 0;
@@ -8,16 +9,16 @@ do {
     //   console.log(" here iam")
     var user_ans = readlineSync.question(question);
     if (user_ans === answer) {
-      console.log("you are right ");
+      console.log(chalk.green("you are right "));
       score = score + 1;
     }
     else {
-      console.log("better luck next time ");
+      console.log(chalk.red("better luck next time "));
       score = score - 1;
     }
 
     console.log("-------------------------------------------")
-    console.log("your current score is " + score);
+    console.log(chalk.green("your current score is " + score));
     console.log("-------------------------------------------")
     score1[k] = score;
     k++;
@@ -58,7 +59,7 @@ do {
   console.log(" -------------------\n");
   console.log("--correct ans are --")
   for (var i = 0; i < 4; i++) {
-    console.log(ans[i]);
+    console.log(chalk.magenta(ans[i]));
   }
   // user ka score aur high score batana
   // max score
